@@ -1,4 +1,6 @@
-package intromethods;
+package intromethods.employee;
+
+import intromethods.employee.Employee;
 
 public class EmpolyeeMain {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package intromethods;
+package intromethods.employee;
 
 public class Employee {
 
