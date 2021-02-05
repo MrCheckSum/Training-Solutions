@@ -13,11 +13,11 @@ public class CountAChar {
         int sum = 0;
 
         try (InputStream inputStream = Files.newInputStream(path)) {
-            byte[] buffer = new byte[1000];
-            int size = 0;
-            while ((size = inputStream.read(buffer)) > 0) {
-                for (byte item : buffer) {
-                    if (item == 97) {
+            byte[] bytes = new byte[1000];
+            int size;
+            while ((size = inputStream.read(bytes)) > 0) {
+                for (byte item : bytes) {
+                    if (item == (byte) 'a') {
                         sum++;
                     }
                 }
@@ -27,5 +27,10 @@ public class CountAChar {
             throw new IllegalStateException("File is non-readable!", ioException);
         }
         return sum;
+    }
+
+    public static void main(String[] args) {
+        CountAChar cac = new CountAChar();
+        System.out.println(cac.countACharFromByteFile("data.dat"));
     }
 }

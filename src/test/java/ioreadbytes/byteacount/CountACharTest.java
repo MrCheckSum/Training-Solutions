@@ -11,8 +11,9 @@ class CountACharTest {
     @Test
     void countACharFromByteFile() {
 
-        assertEquals(129, countAChar.countACharFromByteFile("data.dat"));
+       assertEquals(129, countAChar.countACharFromByteFile("data.dat"));
         // mivel nincs megadva a file, hiszünk a megadott tesztnek
+        // megvan a file!
 
     }
 }
