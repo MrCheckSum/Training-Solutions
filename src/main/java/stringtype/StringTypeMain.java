@@ -25,6 +25,7 @@ public class StringTypeMain {
         System.out.println(testText.substring(0, 1) + ", " + testText.substring(2, 3));
         System.out.println(testText.substring(0, 2));
 
+
     }
 
 }
