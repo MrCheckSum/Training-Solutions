@@ -1,0 +1,12 @@
+package collectionsset.collectionstreeset;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class WordFilterTest {
+
+    @Test
+    void filterWords() {
+    }
+}
