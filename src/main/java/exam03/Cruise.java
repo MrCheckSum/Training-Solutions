@@ -1,8 +1,7 @@
 package exam03;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Cruise {
 
@@ -47,10 +46,18 @@ public class Cruise {
         if (passenger.getCruiseClass() == CruiseClass.FIRST) {
             fullPrice = basicPrice * 1.0;
         }
-
+/*
         if (passenger.getCruiseClass() == CruiseClass.SECOND) {
             fullPrice = basicPrice * 1.8;
         } else {
+            fullPrice = basicPrice * 3.0;
+        }
+*/
+        if (passenger.getCruiseClass() == CruiseClass.SECOND) {
+            fullPrice = basicPrice * 1.8;
+        }
+
+        if (passenger.getCruiseClass() == CruiseClass.LUXURY) {
             fullPrice = basicPrice * 3.0;
         }
 
@@ -67,18 +74,6 @@ public class Cruise {
         throw new IllegalArgumentException("No passenger found!");
     }
 
-    /*
-    public Passenger findPassengerNameOrdered(String name) {
-    return Passener
-    }
-     */
-
-    /*
-        public void getPassengerNamesOrdered() {
-        return  List<String>
-        }
-    */
-
     public double sumAllBookingsCharged() {
         double allBookedCharge = 0.0;
         for (Passenger passenger : passengers) {
@@ -86,10 +81,32 @@ public class Cruise {
         }
         return allBookedCharge;
     }
-
-    /*
-    public Map<CruiseClass, Integer> countPassengerByClass() {
-    return Map
+//************************************************************************************************ Exam03 end
+/* Nem volt ilyen metódus a feladatban
+    public Passenger findPassengerNameOrdered(String name) {
+    return Passener
     }
-    */
+*/
+
+
+    public List<String> getPassengerNamesOrdered() {
+        List<String> foundPassengers = new ArrayList<>();
+        for (Passenger passenger : passengers) {
+            foundPassengers.add(passenger.getName());
+        }
+        Collections.sort(foundPassengers);
+        return foundPassengers;
+    }
+
+    public Map<CruiseClass, Integer> countPassengerByClass() {
+        Map<CruiseClass, Integer> countedClass = new TreeMap<>();
+        for (Passenger passenger : passengers) {
+            if (!countedClass.containsKey(passenger.getCruiseClass())) {
+                countedClass.put(passenger.getCruiseClass(), 0);
+            }
+            countedClass.put(passenger.getCruiseClass(), (countedClass.get(passenger.getCruiseClass()) + 1));
+        }
+        return countedClass;
+    }
+
 }
