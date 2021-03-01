@@ -1,4 +1,4 @@
-package ioreading.names;
+package ioreadstring.names;
 
 import org.junit.jupiter.api.Test;
 
