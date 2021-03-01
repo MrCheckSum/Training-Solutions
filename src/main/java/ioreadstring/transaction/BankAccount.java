@@ -1,4 +1,4 @@
-package ioreading.transaction;
+package ioreadstring.transaction;
 
 public class BankAccount {
 
