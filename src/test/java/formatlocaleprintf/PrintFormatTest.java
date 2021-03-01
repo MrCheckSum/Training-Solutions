@@ -1,6 +1,5 @@
 package formatlocaleprintf;
 
-import formatlocalprintf.PrintFormat;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
